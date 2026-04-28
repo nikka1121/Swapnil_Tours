@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Swapnil Tours | Cab Booking</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+.logo {
+  width: 120px;
+  border-radius: 50%;
+}
+
+/* Glass card */
+.card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 15px;
+  color: white;
+}
+
+/* Inputs */
+input, select, button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+}
+
+/* Buttons */
+.whatsapp {
+  background: #25D366;
+  color: white;
+  font-weight: bold;
+}
+
+.call {
+  background: #ff9800;
+  color: white;
+  font-weight: bold;
+}
+
+/* Visiting card */
+.visiting-card {
+  background: white;
+  max-width: 400px;
+  margin: 25px auto;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<img src="logo.png" class="logo">
+<h2>Swapnil Tours</h2>
+<p>Pune & Mumbai Specialist</p>
+</div>
+
+<div class="card">
+<h3>🚖 Book Your Ride</h3>
+
+<input type="date" id="date">
+<input type="text" id="from" placeholder="Pickup Location">
+<input type="text" id="to" placeholder="Destination">
+
+<select id="type">
+<option>Single Journey</option>
+<option>Return Journey</option>
+</select>
+
+<button class="whatsapp" onclick="book()">📲 Book on WhatsApp</button>
+<button class="call" onclick="call()">📞 Call Now</button>
+</div>
+
+<div class="visiting-card">
+<h3>Swapnil Tours</h3>
+<p>🚖 Pune & Mumbai Specialist</p>
+<p>📞 9156822232</p>
+</div>
+
+<script>
+function book(){
+let d=document.getElementById("date").value;
+let f=document.getElementById("from").value;
+let t=document.getElementById("to").value;
+let ty=document.getElementById("type").value;
+
+let msg=`Booking Request:%0ADate:${d}%0AFrom:${f}%0ATo:${t}%0AJourney:${ty}`;
+window.open(`https://wa.me/919156822232?text=${msg}`);
+}
+
+function call(){
+window.location.href="tel:9156822232";
+}
+</script>
+
+</body>
+</html>
